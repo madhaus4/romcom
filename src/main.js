@@ -14,6 +14,9 @@ var coverTitle = document.querySelector('.cover-title');
 var tagline1 = document.querySelector('.tagline-1');
 var tagline2 = document.querySelector('.tagline-2');
 
+// buttons
+var newCoverBtn = document.querySelector('.random-cover-button');
+
 // use innerText to change html value
 
 
@@ -27,6 +30,7 @@ var currentCover;
 
 // add eventListener to of window.eventListener('load', functionName)
 window.addEventListener('load', getRandomCover)
+newCoverBtn.addEventListener('click', getRandomCover);
 
 // Create your event handlers and other functions here 👇
 
