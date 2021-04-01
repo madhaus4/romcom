@@ -1,6 +1,6 @@
 var covers = [
   './assets/bluebrocade.jpg',
-  './assets/dance.jpg', 
+  './assets/dance.jpg',
   './assets/embrace.png',
   './assets/fire.png',
   './assets/frock.png',
@@ -90,3 +90,5 @@ var descriptors = [
   "blessings",
   "melancholy"
 ];
+// console.log(covers, titles, descriptors);
+// console.log(covers);

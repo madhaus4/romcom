@@ -1,5 +1,8 @@
 // Create variables targetting the relevant DOM elements here 👇
 
+// create a variable targeting the class '.cover-image'
+// create a variable targeting the class '.cover-title'
+// create a variable targeting the 'h3' tag
 
 // We've provided a few variables below
 var savedCovers = [
@@ -9,6 +12,7 @@ var currentCover;
 
 // Add your event listeners here 👇
 
+// add eventListener to of window.eventListener('load', functionName)
 
 // Create your event handlers and other functions here 👇
 
@@ -17,3 +21,4 @@ var currentCover;
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 }
+// create randomRomComCover function. then add this function to the window load event listener. 
