@@ -14,19 +14,23 @@ var coverTitle = document.querySelector('.cover-title');
 var tagline1 = document.querySelector('.tagline-1');
 var tagline2 = document.querySelector('.tagline-2');
 
+// buttons
+var newCoverBtn = document.querySelector('.random-cover-button');
+
 // use innerText to change html value
 
 
 // We've provided a few variables below
-var savedCovers = [
-  new Cover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows")
-];
+// var savedCovers = [
+//   new Cover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows")
+// ];
 var currentCover;
 
 // Add your event listeners here 👇
 
 // add eventListener to of window.eventListener('load', functionName)
 window.addEventListener('load', getRandomCover)
+newCoverBtn.addEventListener('click', getRandomCover);
 
 // Create your event handlers and other functions here 👇
 
@@ -40,6 +44,9 @@ function getRandomCover() {
   var randomTitle = titles[getRandomIndex(titles)]
   var randomTagline1 = descriptors[getRandomIndex(descriptors)]
   var randomTagline2 = descriptors[getRandomIndex(descriptors)];
+
+  //Remove the variables but add the assignment value to the values of these down here to make the code cleaner.
+
   coverImage.src = randomCover;
   coverTitle.innerText = randomTitle;
   tagline1.innerText = randomTagline1;
@@ -49,5 +56,3 @@ currentCover = new Cover(randomCover, randomTitle, randomTagline1, randomTagline
 
 
 }
-
-console.log(getRandomIndex);
