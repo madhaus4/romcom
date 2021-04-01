@@ -39,18 +39,12 @@ function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 }
 // create randomRomComCover function. then add this function to the window load event listener.
+
 function getRandomCover() {
-  var randomCover = covers[getRandomIndex(covers)]
-  var randomTitle = titles[getRandomIndex(titles)]
-  var randomTagline1 = descriptors[getRandomIndex(descriptors)]
-  var randomTagline2 = descriptors[getRandomIndex(descriptors)];
-
-  //Remove the variables but add the assignment value to the values of these down here to make the code cleaner.
-
-  coverImage.src = randomCover;
-  coverTitle.innerText = randomTitle;
-  tagline1.innerText = randomTagline1;
-  tagline2.innerText = randomTagline2;
+  coverImage.src = covers[getRandomIndex(covers)];
+  coverTitle.innerText = titles[getRandomIndex(titles)];
+  tagline1.innerText = descriptors[getRandomIndex(descriptors)];
+  tagline2.innerText = descriptors[getRandomIndex(descriptors)];
 
 currentCover = new Cover(randomCover, randomTitle, randomTagline1, randomTagline2);
 
