@@ -48,3 +48,9 @@ function getRandomCover() {
   tagline1.innerText = currentCover.tagline1;
   tagline2.innerText = currentCover.tagline2;
 }
+
+// *when user clicks 'make your own cover button', the form should display and the homepage view should be hidden*
+// create a variable (makeOwnCover) that targets 'make your own cover' button using-- '.make-new-button'
+// create eventListener for said button &set to execute on 'click'
+// create function (displayForm) 
+// how do we make homepage view hidden?
