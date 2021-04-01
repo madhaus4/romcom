@@ -21,9 +21,9 @@ var newCoverBtn = document.querySelector('.random-cover-button');
 
 
 // We've provided a few variables below
-var savedCovers = [
-  new Cover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows")
-];
+// var savedCovers = [
+//   new Cover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows")
+// ];
 var currentCover;
 
 // Add your event listeners here 👇
@@ -39,19 +39,14 @@ function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 }
 // create randomRomComCover function. then add this function to the window load event listener.
+
 function getRandomCover() {
-  var randomCover = covers[getRandomIndex(covers)]
-  var randomTitle = titles[getRandomIndex(titles)]
-  var randomTagline1 = descriptors[getRandomIndex(descriptors)]
-  var randomTagline2 = descriptors[getRandomIndex(descriptors)];
-  coverImage.src = randomCover;
-  coverTitle.innerText = randomTitle;
-  tagline1.innerText = randomTagline1;
-  tagline2.innerText = randomTagline2;
+  coverImage.src = covers[getRandomIndex(covers)];
+  coverTitle.innerText = titles[getRandomIndex(titles)];
+  tagline1.innerText = descriptors[getRandomIndex(descriptors)];
+  tagline2.innerText = descriptors[getRandomIndex(descriptors)];
 
 currentCover = new Cover(randomCover, randomTitle, randomTagline1, randomTagline2);
 
 
 }
-
-console.log(getRandomIndex);
