@@ -4,9 +4,13 @@ var coverTitle = document.querySelector('.cover-title');
 var tagline1 = document.querySelector('.tagline-1');
 var tagline2 = document.querySelector('.tagline-2');
 
+var viewForm = document.querySelector('.form-view')
+var hideHomeView = document.querySelector('.home-view')
+
 
 // buttons
 var newCoverBtn = document.querySelector('.random-cover-button');
+var makeOwnCoverBtn = document.querySelector('.make-new-button');
 
 
 // We've provided a few variables below
@@ -19,6 +23,8 @@ var currentCover;
 // Add your event listeners here 👇
 window.addEventListener('load', getRandomCover)
 newCoverBtn.addEventListener('click', getRandomCover);
+makeOwnCoverBtn.addEventListener('click', displayForm)
+
 
 // Create your event handlers and other functions here 👇
 // We've provided one function to get you started
@@ -35,8 +41,7 @@ function getRandomCover() {
   tagline2.innerText = currentCover.tagline2;
 }
 
-// *when user clicks 'make your own cover button', the form should display and the homepage view should be hidden*
-// create a variable (makeOwnCover) that targets 'make your own cover' button using-- '.make-new-button'
-// create eventListener for said button &set to execute on 'click'
-// create function (displayForm) 
-// how do we make homepage view hidden?
+function displayForm() {
+  viewForm.classList.remove('hidden');
+  hideHomeView.classList.add('hidden');
+}
