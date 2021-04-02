@@ -11,6 +11,8 @@ var hideHomeView = document.querySelector('.home-view')
 // buttons
 var newCoverBtn = document.querySelector('.random-cover-button');
 var makeOwnCoverBtn = document.querySelector('.make-new-button');
+var homeBtn = document.querySelector('.home-button');
+var saveCoverBtn = document.querySelector('.save-cover-button');
 
 
 // We've provided a few variables below
@@ -44,4 +46,7 @@ function getRandomCover() {
 function displayForm() {
   viewForm.classList.remove('hidden');
   hideHomeView.classList.add('hidden');
+  newCoverBtn.classList.add('hidden');
+  saveCoverBtn.classList.add('hidden'),
+  homeBtn.classList.remove('hidden');
 }
