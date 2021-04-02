@@ -50,11 +50,11 @@ function displayForm() {
   homeBtn.classList.remove('hidden');
 }
 
-//when saved covers view is visible - 'show new random cover' & 'save cover' buttons are hidden
 function displaySavedCovers() {
   savedCoversPage.classList.remove('hidden');
   viewForm.classList.add('hidden');
   hideHomeView.classList.add('hidden');
   newCoverBtn.classList.add('hidden');
   saveCoverBtn.classList.add('hidden');
+  homeBtn.classList.remove('hidden');
 }
