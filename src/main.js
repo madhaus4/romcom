@@ -69,5 +69,11 @@ function displayHome() {
   randomCoverBtn.classList.remove('hidden');
 
 }
-console.log(displayHome);
-//add this function to homeBtn functionality
+//create var  inputCover dqs('#cover')
+// var inputTitle dqs('#title')
+// var inputDescriptor1 dqs('#descriptor1')
+// var inputDescriptor2('#descriptor2')
+// create variable makeBookBtn dqs('.create-new-book')
+// activate makeBookBtn addEventListener('click')
+// create a fucntion buildCover() manipulate first variables.innerText = newIdVar.value
+// add functction to btn
