@@ -70,10 +70,17 @@ function displayHome() {
 
 }
 //create var  inputCover dqs('#cover')
-// var inputTitle dqs('#title')
-// var inputDescriptor1 dqs('#descriptor1')
-// var inputDescriptor2('#descriptor2')
-// create variable makeBookBtn dqs('.create-new-book')
-// activate makeBookBtn addEventListener('click')
-// create a fucntion buildCover() manipulate first variables.innerText = newIdVar.value
-// add functction to btn
+var inputCover = document.querySelector('#cover');
+var inputTitle = document.querySelector('#title');
+var inputDescriptor1 = document.querySelector('#descriptor1');
+var inputDescriptor2 = document.querySelector('#descriptor2');
+var makeBookBtn = document.querySelector('.create-new-book-button')
+makeBookBtn.addEventListener('click', buildCover);
+
+function buildCover(event) {
+  coverImage.src = inputCover.value;
+  coverTitle.innerText =  inputTitle.value;
+  tagline1.innerText = inputDescriptor1.value;
+  tagline2.innerText = inputDescriptor2.value;
+
+};
