@@ -69,5 +69,18 @@ function displayHome() {
   randomCoverBtn.classList.remove('hidden');
 
 }
-console.log(displayHome);
-//add this function to homeBtn functionality
+//create var  inputCover dqs('#cover')
+var inputCover = document.querySelector('#cover');
+var inputTitle = document.querySelector('#title');
+var inputDescriptor1 = document.querySelector('#descriptor1');
+var inputDescriptor2 = document.querySelector('#descriptor2');
+var makeBookBtn = document.querySelector('.create-new-book-button')
+makeBookBtn.addEventListener('click', buildCover);
+
+function buildCover(event) {
+  coverImage.src = inputCover.value;
+  coverTitle.innerText =  inputTitle.value;
+  tagline1.innerText = inputDescriptor1.value;
+  tagline2.innerText = inputDescriptor2.value;
+
+};
