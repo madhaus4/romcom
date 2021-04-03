@@ -68,7 +68,7 @@ homeBtn.addEventListener('click', displayHome);
    hideHomeView.classList.remove('hidden');
    viewForm.classList.add('hidden');
    savedCoversPage.classList.add('hidden');
-  
+   homeBtn.classList.add('hidden');
 
  }
  console.log(displayHome);
