@@ -58,6 +58,18 @@ function displaySavedCovers() {
   saveCoverBtn.classList.add('hidden');
   homeBtn.classList.remove('hidden');
 }
+// var viewHomeView = document.querySelector('.view');
 // target viewHomeView dqs '.view' or '.home-view'
 // create an eventListener to home on 'click'
-// creat a fucntion to add classList 'hidden' form from 'create new poster page' and 'saved posters page'
+homeBtn.addEventListener('click', displayHome);
+// // creat a fucntion to add classList 'hidden' form
+ // from 'create new poster page' and 'saved posters page'
+ function displayHome() {
+   hideHomeView.classList.remove('hidden');
+   viewForm.classList.add('hidden');
+   savedCoversPage.classList.add('hidden');
+  
+
+ }
+ console.log(displayHome);
+//add this function to homeBtn functionality
