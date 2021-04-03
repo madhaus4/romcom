@@ -26,6 +26,7 @@ window.addEventListener('load', getRandomCover);
 randomCoverBtn.addEventListener('click', getRandomCover);
 makeOwnCoverBtn.addEventListener('click', displayForm);
 viewSavedCoversBtn.addEventListener('click', displaySavedCovers);
+homeBtn.addEventListener('click', displayHome);
 
 // Create your event handlers and other functions here 👇
 // We've provided one function to get you started
@@ -58,12 +59,7 @@ function displaySavedCovers() {
   saveCoverBtn.classList.add('hidden');
   homeBtn.classList.remove('hidden');
 }
-// var viewHomeView = document.querySelector('.view');
-// target viewHomeView dqs '.view' or '.home-view'
-// create an eventListener to home on 'click'
-homeBtn.addEventListener('click', displayHome);
-// // creat a fucntion to add classList 'hidden' form
-// from 'create new poster page' and 'saved posters page'
+
 function displayHome() {
   hideHomeView.classList.remove('hidden');
   viewForm.classList.add('hidden');
