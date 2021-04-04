@@ -85,7 +85,16 @@ function buildCover(event) {
     hideHomeView.classList.remove('hidden');
 
     coverImage.src = inputCover.value;
-    coverTitle.innerText =  inputTitle.value;
+    coverTitle.innerText = inputTitle.value;
     tagline1.innerText = inputDescriptor1.value;
     tagline2.innerText = inputDescriptor2.value;
 };
+
+
+// when Save Cover button is clicked, the current cover will be added to the savedCovers array.
+
+// create a function saveCover to push currentCover to savedCovers array
+// create eventListener to happen on 'click'
+
+// unhide save cover button '.save-cover-button'
+// ^^ overlooked in last interation - need to add
