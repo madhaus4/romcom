@@ -91,10 +91,16 @@ function buildCover(event) {
     tagline2.innerText = inputDescriptor2.value;
 };
 
+var savedCovers = [];
+saveCoverBtn.addEventListener('click', saveCover);
 
-// when Save Cover button is clicked, the current cover will be added to the savedCovers array.
+function saveCover() {
+  savedCovers.push(currentCover);
+}
 
-// create a function saveCover to push currentCover to savedCovers array
+
+// create a function saveCover
+//     >to push currentCover to savedCovers array
 // create eventListener to happen on 'click'
 
 // unhide save cover button '.save-cover-button'
