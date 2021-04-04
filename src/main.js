@@ -82,5 +82,8 @@ function buildCover(event) {
   coverTitle.innerText =  inputTitle.value;
   tagline1.innerText = inputDescriptor1.value;
   tagline2.innerText = inputDescriptor2.value;
-
 };
+
+// create a new instance of currentCover to show the inputs
+// add function preventDefault() inside of buildCover function to it does not default to the original home page
+// use classList to hide home page and form page
