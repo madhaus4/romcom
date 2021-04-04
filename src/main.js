@@ -78,10 +78,15 @@ var makeBookBtn = document.querySelector('.create-new-book-button')
 makeBookBtn.addEventListener('click', buildCover);
 
 function buildCover(event) {
-  coverImage.src = inputCover.value;
-  coverTitle.innerText =  inputTitle.value;
-  tagline1.innerText = inputDescriptor1.value;
-  tagline2.innerText = inputDescriptor2.value;
+  event.preventDefault();
+    currentCover = new Cover(inputCover.value, inputTitle.value, inputDescriptor1.value, inputDescriptor2.value);
+    viewForm.classList.add('hidden');
+    hideHomeView.classList.remove('hidden');
+
+    coverImage.src = inputCover.value;
+    coverTitle.innerText =  inputTitle.value;
+    tagline1.innerText = inputDescriptor1.value;
+    tagline2.innerText = inputDescriptor2.value;
 };
 
 // create a new instance of currentCover to show the inputs
