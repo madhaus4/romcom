@@ -83,6 +83,7 @@ function buildCover(event) {
     currentCover = new Cover(inputCover.value, inputTitle.value, inputDescriptor1.value, inputDescriptor2.value);
     viewForm.classList.add('hidden');
     hideHomeView.classList.remove('hidden');
+    saveCoverBtn.classList.remove('hidden');
 
     coverImage.src = inputCover.value;
     coverTitle.innerText = inputTitle.value;
