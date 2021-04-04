@@ -101,3 +101,12 @@ function saveCover() {
     // console.log(currentCover);
   }
 }
+
+//All the covers in the savedCovers array should be displayed in the saved covers section
+
+// add to our funtion displaySavedCovers() add functionality that will allow users to view their saved covers in the savedCovers section.
+//target out innerHTML in our view-saved-view section
+// ?create a new varibale to make the the changes we need in order to see our saved covers array in page?
+//may need a for loop to iterate through savedCovers array
+// might need to use document.getElementById().innerHTML
+//appendChild() maybe??????? 
