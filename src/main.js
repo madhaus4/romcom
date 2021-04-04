@@ -29,6 +29,7 @@ var currentCover;
 var savedCovers = [];
 
 
+
 // Add your event listeners here 👇
 window.addEventListener('load', getRandomCover);
 randomCoverBtn.addEventListener('click', getRandomCover);
@@ -69,6 +70,9 @@ function displaySavedCovers() {
   randomCoverBtn.classList.add('hidden');
   saveCoverBtn.classList.add('hidden');
   homeBtn.classList.remove('hidden');
+
+  showSavedCovers();
+
 }
 
 function displayHome() {
@@ -104,9 +108,30 @@ function saveCover() {
 
 //All the covers in the savedCovers array should be displayed in the saved covers section
 
+
+// var savedCoversSection dqs('.saved-covers-section')
+var savedCoversSection = document.querySelector('.saved-covers-section');
 // add to our funtion displaySavedCovers() add functionality that will allow users to view their saved covers in the savedCovers section.
+function showSavedCovers() {
+  savedCoversSection.innerHTML = '';
+  for (var i = 0; i < savedCovers.length; i++) {
+    savedCoversSection.innerHTML +=
+      `<section class="mini-cover"  id=${savedCovers[i].id}>
+        <img class="cover-image" src="${savedCovers[i].cover}">
+        <h2 class="${savedCovers[i].title}"></h2>
+        <h3 class="tagline">A tale of <span class="tagline-1">${savedCovers[i].tagline1}</span> and <span class="tagline-2">${savedCovers[i].tagline2}</span></h3>
+        <img class="price-tag" src="./assets/price.png">
+        <img class="overlay" src="./assets/overlay.png">
+      </section>`
+    };
+
+
+}
+// console.log(showSavedCovers());
+// console.log(displaySavedCovers());
+// insertAdjacentHTMl ???
 //target out innerHTML in our view-saved-view section
 // ?create a new varibale to make the the changes we need in order to see our saved covers array in page?
 //may need a for loop to iterate through savedCovers array
 // might need to use document.getElementById().innerHTML
-//appendChild() maybe??????? 
+//appendChild() maybe???????
