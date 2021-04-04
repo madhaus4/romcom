@@ -6,6 +6,11 @@ var tagline2 = document.querySelector('.tagline-2');
 var viewForm = document.querySelector('.form-view');
 var hideHomeView = document.querySelector('.home-view');
 var savedCoversPage = document.querySelector('.saved-view');
+var inputCover = document.querySelector('#cover');
+var inputTitle = document.querySelector('#title');
+var inputDescriptor1 = document.querySelector('#descriptor1');
+var inputDescriptor2 = document.querySelector('#descriptor2');
+
 
 // buttons
 var randomCoverBtn = document.querySelector('.random-cover-button');
@@ -13,6 +18,8 @@ var makeOwnCoverBtn = document.querySelector('.make-new-button');
 var homeBtn = document.querySelector('.home-button');
 var saveCoverBtn = document.querySelector('.save-cover-button');
 var viewSavedCoversBtn = document.querySelector('.view-saved-button');
+var makeBookBtn = document.querySelector('.create-new-book-button');
+
 
 // We've provided a few variables below
 // var savedCovers = [
@@ -27,6 +34,7 @@ randomCoverBtn.addEventListener('click', getRandomCover);
 makeOwnCoverBtn.addEventListener('click', displayForm);
 viewSavedCoversBtn.addEventListener('click', displaySavedCovers);
 homeBtn.addEventListener('click', displayHome);
+makeBookBtn.addEventListener('click', buildCover);
 
 // Create your event handlers and other functions here 👇
 // We've provided one function to get you started
@@ -67,20 +75,17 @@ function displayHome() {
   homeBtn.classList.add('hidden');
   saveCoverBtn.classList.remove('hidden');
   randomCoverBtn.classList.remove('hidden');
-
 }
-//create var  inputCover dqs('#cover')
-var inputCover = document.querySelector('#cover');
-var inputTitle = document.querySelector('#title');
-var inputDescriptor1 = document.querySelector('#descriptor1');
-var inputDescriptor2 = document.querySelector('#descriptor2');
-var makeBookBtn = document.querySelector('.create-new-book-button')
-makeBookBtn.addEventListener('click', buildCover);
+
 
 function buildCover(event) {
-  coverImage.src = inputCover.value;
-  coverTitle.innerText =  inputTitle.value;
-  tagline1.innerText = inputDescriptor1.value;
-  tagline2.innerText = inputDescriptor2.value;
+  event.preventDefault();
+    currentCover = new Cover(inputCover.value, inputTitle.value, inputDescriptor1.value, inputDescriptor2.value);
+    viewForm.classList.add('hidden');
+    hideHomeView.classList.remove('hidden');
 
+    coverImage.src = inputCover.value;
+    coverTitle.innerText =  inputTitle.value;
+    tagline1.innerText = inputDescriptor1.value;
+    tagline2.innerText = inputDescriptor2.value;
 };
