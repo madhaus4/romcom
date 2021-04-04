@@ -73,7 +73,6 @@ function displaySavedCovers() {
   homeBtn.classList.remove('hidden');
 
   showSavedCovers();
-
 }
 
 function displayHome() {
@@ -84,7 +83,6 @@ function displayHome() {
   saveCoverBtn.classList.remove('hidden');
   randomCoverBtn.classList.remove('hidden');
 }
-
 
 function buildCover(event) {
   event.preventDefault();
@@ -102,12 +100,8 @@ function buildCover(event) {
 function saveCover() {
   if (!savedCovers.includes(currentCover)) {
     savedCovers.push(currentCover);
-
   }
 }
-
-
-
 
 function showSavedCovers() {
   savedCoversSection.innerHTML = '';
@@ -121,6 +115,14 @@ function showSavedCovers() {
         <img class="overlay" src="./assets/overlay.png">
       </section>`
   };
-
-
 }
+
+
+// when in saved covers view - user double clicks on saved cover to delete
+
+// add 'double click' addEventListener
+// create function deleteSavedCovers
+// create var coverId and assign to a loop savedCovers.length
+// use conditional checking if our savedCoversId is strictly equal to our var coverId
+//(use .splice method) to remove item from savedCovers array
+// call showSavedCovers into this function
