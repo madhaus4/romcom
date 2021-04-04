@@ -26,6 +26,7 @@ var makeBookBtn = document.querySelector('.create-new-book-button');
 //   new Cover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows")
 // ];
 var currentCover;
+var savedCovers = [];
 
 
 // Add your event listeners here 👇
@@ -35,6 +36,8 @@ makeOwnCoverBtn.addEventListener('click', displayForm);
 viewSavedCoversBtn.addEventListener('click', displaySavedCovers);
 homeBtn.addEventListener('click', displayHome);
 makeBookBtn.addEventListener('click', buildCover);
+saveCoverBtn.addEventListener('click', saveCover);
+
 
 // Create your event handlers and other functions here 👇
 // We've provided one function to get you started
@@ -83,9 +86,18 @@ function buildCover(event) {
     currentCover = new Cover(inputCover.value, inputTitle.value, inputDescriptor1.value, inputDescriptor2.value);
     viewForm.classList.add('hidden');
     hideHomeView.classList.remove('hidden');
+    saveCoverBtn.classList.remove('hidden');
 
     coverImage.src = inputCover.value;
-    coverTitle.innerText =  inputTitle.value;
+    coverTitle.innerText = inputTitle.value;
     tagline1.innerText = inputDescriptor1.value;
     tagline2.innerText = inputDescriptor2.value;
-};
+}
+
+function saveCover() {
+  if (!savedCovers.includes(currentCover)) {
+      savedCovers.push(currentCover);
+    // console.log(savedCovers);
+    // console.log(currentCover);
+  }
+}
