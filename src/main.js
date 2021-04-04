@@ -95,13 +95,21 @@ var savedCovers = [];
 saveCoverBtn.addEventListener('click', saveCover);
 
 function saveCover() {
-  savedCovers.push(currentCover);
+  if (!savedCovers.includes(currentCover)) {
+      savedCovers.push(currentCover);
+    console.log(savedCovers);
+    console.log(currentCover);  
+  }
 }
+
+//create conditional for savedCovers array so no duplicates will be made
+
 
 
 // create a function saveCover
 //     >to push currentCover to savedCovers array
 // create eventListener to happen on 'click'
+
 
 // unhide save cover button '.save-cover-button'
 // ^^ overlooked in last interation - need to add
