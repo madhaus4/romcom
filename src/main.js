@@ -39,7 +39,7 @@ viewSavedCoversBtn.addEventListener('click', displaySavedCovers);
 homeBtn.addEventListener('click', displayHome);
 makeBookBtn.addEventListener('click', buildCover);
 saveCoverBtn.addEventListener('click', saveCover);
-
+savedCoversSection.addEventListener('dblclick', deleteSavedCovers);
 
 // Create your event handlers and other functions here 👇
 // We've provided one function to get you started
@@ -117,16 +117,7 @@ function showSavedCovers() {
   };
 }
 
-
-// when in saved covers view - user double clicks on saved cover to delete
-
-// add 'double click' addEventListener
-savedCoversSection.addEventListener('dblclick', deleteSavedCovers);
-// create function deleteSavedCovers
-// create var coverId and assign to a loop savedCovers.length
 function deleteSavedCovers() {
-  console.log(event.target.closest('.mini-cover').id);
-//  savedCoversSection.classList.
   var coverId = event.target.closest('.mini-cover').id;
   for (var i = 0; i < savedCovers.length; i++) {
     if (`${savedCovers[i].id}` === coverId) {
@@ -135,8 +126,3 @@ function deleteSavedCovers() {
   }
   showSavedCovers();
 }
-
-
-// use conditional checking if our saved covers id is strictly equal to our var coverId
-//(use .splice method) to remove item from savedCovers array
-// call showSavedCovers into this function
