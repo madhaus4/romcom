@@ -121,8 +121,22 @@ function showSavedCovers() {
 // when in saved covers view - user double clicks on saved cover to delete
 
 // add 'double click' addEventListener
+savedCoversSection.addEventListener('dblclick', deleteSavedCovers);
 // create function deleteSavedCovers
 // create var coverId and assign to a loop savedCovers.length
-// use conditional checking if our savedCoversId is strictly equal to our var coverId
+function deleteSavedCovers() {
+  console.log(event.target.closest('.mini-cover').id);
+//  savedCoversSection.classList.
+  var coverId = event.target.closest('.mini-cover').id;
+  for (var i = 0; i < savedCovers.length; i++) {
+    if (`${savedCovers[i].id}` === coverId) {
+      savedCovers.splice(i, 1);
+    }
+  }
+  showSavedCovers();
+}
+
+
+// use conditional checking if our saved covers id is strictly equal to our var coverId
 //(use .splice method) to remove item from savedCovers array
 // call showSavedCovers into this function
