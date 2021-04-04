@@ -10,6 +10,7 @@ var inputCover = document.querySelector('#cover');
 var inputTitle = document.querySelector('#title');
 var inputDescriptor1 = document.querySelector('#descriptor1');
 var inputDescriptor2 = document.querySelector('#descriptor2');
+var savedCoversSection = document.querySelector('.saved-covers-section');
 
 
 // buttons
@@ -87,31 +88,27 @@ function displayHome() {
 
 function buildCover(event) {
   event.preventDefault();
-    currentCover = new Cover(inputCover.value, inputTitle.value, inputDescriptor1.value, inputDescriptor2.value);
-    viewForm.classList.add('hidden');
-    hideHomeView.classList.remove('hidden');
-    saveCoverBtn.classList.remove('hidden');
+  currentCover = new Cover(inputCover.value, inputTitle.value, inputDescriptor1.value, inputDescriptor2.value);
+  viewForm.classList.add('hidden');
+  hideHomeView.classList.remove('hidden');
+  saveCoverBtn.classList.remove('hidden');
 
-    coverImage.src = inputCover.value;
-    coverTitle.innerText = inputTitle.value;
-    tagline1.innerText = inputDescriptor1.value;
-    tagline2.innerText = inputDescriptor2.value;
+  coverImage.src = inputCover.value;
+  coverTitle.innerText = inputTitle.value;
+  tagline1.innerText = inputDescriptor1.value;
+  tagline2.innerText = inputDescriptor2.value;
 }
 
 function saveCover() {
   if (!savedCovers.includes(currentCover)) {
-      savedCovers.push(currentCover);
-    // console.log(savedCovers);
-    // console.log(currentCover);
+    savedCovers.push(currentCover);
+
   }
 }
 
-//All the covers in the savedCovers array should be displayed in the saved covers section
 
 
-// var savedCoversSection dqs('.saved-covers-section')
-var savedCoversSection = document.querySelector('.saved-covers-section');
-// add to our funtion displaySavedCovers() add functionality that will allow users to view their saved covers in the savedCovers section.
+
 function showSavedCovers() {
   savedCoversSection.innerHTML = '';
   for (var i = 0; i < savedCovers.length; i++) {
@@ -123,15 +120,7 @@ function showSavedCovers() {
         <img class="price-tag" src="./assets/price.png">
         <img class="overlay" src="./assets/overlay.png">
       </section>`
-    };
+  };
 
 
 }
-// console.log(showSavedCovers());
-// console.log(displaySavedCovers());
-// insertAdjacentHTMl ???
-//target out innerHTML in our view-saved-view section
-// ?create a new varibale to make the the changes we need in order to see our saved covers array in page?
-//may need a for loop to iterate through savedCovers array
-// might need to use document.getElementById().innerHTML
-//appendChild() maybe???????
