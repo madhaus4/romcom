@@ -1,4 +1,3 @@
-// Create variables targetting the relevant DOM elements here 👇
 var coverImage = document.querySelector('.cover-image');
 var coverTitle = document.querySelector('.cover-title');
 var tagline1 = document.querySelector('.tagline-1');
@@ -12,8 +11,6 @@ var inputDescriptor1 = document.querySelector('#descriptor1');
 var inputDescriptor2 = document.querySelector('#descriptor2');
 var savedCoversSection = document.querySelector('.saved-covers-section');
 
-
-// buttons
 var randomCoverBtn = document.querySelector('.random-cover-button');
 var makeOwnCoverBtn = document.querySelector('.make-new-button');
 var homeBtn = document.querySelector('.home-button');
@@ -21,17 +18,10 @@ var saveCoverBtn = document.querySelector('.save-cover-button');
 var viewSavedCoversBtn = document.querySelector('.view-saved-button');
 var makeBookBtn = document.querySelector('.create-new-book-button');
 
-
-// We've provided a few variables below
-// var savedCovers = [
-//   new Cover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows")
-// ];
 var currentCover;
 var savedCovers = [];
 
 
-
-// Add your event listeners here 👇
 window.addEventListener('load', getRandomCover);
 randomCoverBtn.addEventListener('click', getRandomCover);
 makeOwnCoverBtn.addEventListener('click', displayForm);
@@ -41,14 +31,13 @@ makeBookBtn.addEventListener('click', buildCover);
 saveCoverBtn.addEventListener('click', saveCover);
 savedCoversSection.addEventListener('dblclick', deleteSavedCovers);
 
-// Create your event handlers and other functions here 👇
-// We've provided one function to get you started
+
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 }
 
 function getRandomCover() {
-  currentCover = new Cover(covers[getRandomIndex(covers)], titles[getRandomIndex(titles)], descriptors[getRandomIndex(descriptors)], descriptors[getRandomIndex(descriptors)])
+  currentCover = new Cover(covers[getRandomIndex(covers)], titles[getRandomIndex(titles)], descriptors[getRandomIndex(descriptors)], descriptors[getRandomIndex(descriptors)]);
 
   coverImage.src = currentCover.cover;
   coverTitle.innerText = currentCover.title;
@@ -62,6 +51,7 @@ function displayForm() {
   randomCoverBtn.classList.add('hidden');
   saveCoverBtn.classList.add('hidden');
   homeBtn.classList.remove('hidden');
+  savedCoversPage.classList.add('hidden');
 }
 
 function displaySavedCovers() {
@@ -72,7 +62,17 @@ function displaySavedCovers() {
   saveCoverBtn.classList.add('hidden');
   homeBtn.classList.remove('hidden');
 
-  showSavedCovers();
+  savedCoversSection.innerHTML = '';
+  for (var i = 0; i < savedCovers.length; i++) {
+    savedCoversSection.innerHTML +=
+      `<section class="mini-cover"  id=${savedCovers[i].id}>
+        <img class="cover-image" src="${savedCovers[i].cover}">
+        <h2 class="${savedCovers[i].title}"></h2>
+        <h3 class="tagline">A tale of <span class="tagline-1">${savedCovers[i].tagline1}</span> and <span class="tagline-2">${savedCovers[i].tagline2}</span></h3>
+        <img class="price-tag" src="./assets/price.png">
+        <img class="overlay" src="./assets/overlay.png">
+      </section>`
+  }
 }
 
 function displayHome() {
@@ -103,20 +103,6 @@ function saveCover() {
   }
 }
 
-function showSavedCovers() {
-  savedCoversSection.innerHTML = '';
-  for (var i = 0; i < savedCovers.length; i++) {
-    savedCoversSection.innerHTML +=
-      `<section class="mini-cover"  id=${savedCovers[i].id}>
-        <img class="cover-image" src="${savedCovers[i].cover}">
-        <h2 class="${savedCovers[i].title}"></h2>
-        <h3 class="tagline">A tale of <span class="tagline-1">${savedCovers[i].tagline1}</span> and <span class="tagline-2">${savedCovers[i].tagline2}</span></h3>
-        <img class="price-tag" src="./assets/price.png">
-        <img class="overlay" src="./assets/overlay.png">
-      </section>`
-  };
-}
-
 function deleteSavedCovers() {
   var coverId = event.target.closest('.mini-cover').id;
   for (var i = 0; i < savedCovers.length; i++) {
@@ -124,5 +110,5 @@ function deleteSavedCovers() {
       savedCovers.splice(i, 1);
     }
   }
-  showSavedCovers();
+  displaySavedCovers();
 }
