@@ -1,13 +1,37 @@
 # RomCom
 
-A boilerplate repo. 
 
-## Set Up
-1. ONE teammate: fork this boilerplate repository 
-2. Clone down your new, forked repo
-3. cd into the repository
-4. Open it in your text editor
-5. View the project in the browser by running open index.html in your terminal
-6. Add all project partners and your assigned instructor as collaborators on the repository
+### Description  
 
-The project spec & rubric can be found [here](https://frontend.turing.io/projects/module-1/romcom-pair.html)
+Webpage that users can interact with and create ***RomCom*** covers exploring and creating their wildest fantasies.
+
+
+### How it Works
+- On page load user has option on clicking "Show New Random Cover"  which will generate a new cover each time button is clicked.
+- If you click "Make Your Own Cover" user has the capability to input their own creative ideas to generate a new cover by clicking "Make My Book" button.
+- Once Book has been created it can be saved with the "Save Cover" button, and viewed with the "Viewed Saved Covers" button. When in Saved covers page user has the option to delete a saved cover by double clicking the image.
+- Additionally when on the home page user has the option to save a randomized Cover
+
+### Technologies Implemented:
+- Javascript
+- HTML
+- CSS
+
+### Future Updates
+- Implement data validation and error handling into the form (disable the button until all fields are filled, provide error messages if data entered is not correct, etc)
+- When a user single clicks a saved cover, create a modal to view it larger
+- Allow users to drag and drop saved posters into whatever order they want them to appear
+
+******************************************************************
+Github Pages Link: https://madhaus4.github.io/romcom/
+
+#### Contributors:
+
+- Eva Navarrete
+- Maria DelSignore
+
+### Switch Through Views:
+![](https://media.giphy.com/media/NwOPay6INDfRQm8dIB/giphy.gif)
+
+### Create Your Own Book:
+![](https://media.giphy.com/media/fTL6pBySwzZTbB04Jy/giphy.gif)
