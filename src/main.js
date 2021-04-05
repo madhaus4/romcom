@@ -39,7 +39,7 @@ viewSavedCoversBtn.addEventListener('click', displaySavedCovers);
 homeBtn.addEventListener('click', displayHome);
 makeBookBtn.addEventListener('click', buildCover);
 saveCoverBtn.addEventListener('click', saveCover);
-
+savedCoversSection.addEventListener('dblclick', deleteSavedCovers);
 
 // Create your event handlers and other functions here 👇
 // We've provided one function to get you started
@@ -73,7 +73,6 @@ function displaySavedCovers() {
   homeBtn.classList.remove('hidden');
 
   showSavedCovers();
-
 }
 
 function displayHome() {
@@ -84,7 +83,6 @@ function displayHome() {
   saveCoverBtn.classList.remove('hidden');
   randomCoverBtn.classList.remove('hidden');
 }
-
 
 function buildCover(event) {
   event.preventDefault();
@@ -102,12 +100,8 @@ function buildCover(event) {
 function saveCover() {
   if (!savedCovers.includes(currentCover)) {
     savedCovers.push(currentCover);
-
   }
 }
-
-
-
 
 function showSavedCovers() {
   savedCoversSection.innerHTML = '';
@@ -121,6 +115,14 @@ function showSavedCovers() {
         <img class="overlay" src="./assets/overlay.png">
       </section>`
   };
+}
 
-
+function deleteSavedCovers() {
+  var coverId = event.target.closest('.mini-cover').id;
+  for (var i = 0; i < savedCovers.length; i++) {
+    if (`${savedCovers[i].id}` === coverId) {
+      savedCovers.splice(i, 1);
+    }
+  }
+  showSavedCovers();
 }
